@@ -1,0 +1,8 @@
+MyProperty(x,obs) = 
+	if ( s.rval("steps") >= x ) 
+		then  s.rval(obs)  
+		else # MyProperty(x,obs) fi ;
+
+eval parametric(E[ MyProperty(x,"avgHappy")],
+                E[ MyProperty(x,"dissatisfactionRate")],
+                E[ MyProperty(x,"averageClusteringCoefficient")],x,1.0,1.0,500.0);
